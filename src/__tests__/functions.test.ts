@@ -7,11 +7,11 @@ import {
 
 describe("functions", () => {
 	let eRecht24: ERecht24
+	const apiKey =
+		"e81cbf18a5239377aa4972773d34cc2b81ebc672879581bce29a0a4c414bf117"
 
 	beforeAll(() => {
-		eRecht24 = new ERecht24(
-			"e81cbf18a5239377aa4972773d34cc2b81ebc672879581bce29a0a4c414bf117",
-		)
+		eRecht24 = new ERecht24(apiKey)
 	})
 
 	test("Imprint", async () => {
@@ -41,6 +41,27 @@ describe("functions", () => {
 
 	test("PrivacyPolicySocialMedia", async () => {
 		const privacyPolicySocialMedia = await eRecht24.PrivacyPolicySocialMedia
+		expect(privacyPolicySocialMedia).toBeDefined()
+		expect(
+			instanceOfPrivacyPolicySocialMedia(privacyPolicySocialMedia),
+		).toBeTruthy()
+	})
+
+	test("Static - Imprint", async () => {
+		const imprint = await ERecht24.getImprint(apiKey)
+		expect(imprint).toBeDefined()
+		expect(instanceOfImprint(imprint)).toBeTruthy()
+	})
+
+	test("Static - PrivacyPolicy", async () => {
+		const privacyPolicy = await ERecht24.getPrivacyPolicy(apiKey)
+		expect(privacyPolicy).toBeDefined()
+		expect(instanceOfPrivacyPolicy(privacyPolicy)).toBeTruthy()
+	})
+
+	test("Static - PrivacyPolicySocialMedia", async () => {
+		const privacyPolicySocialMedia =
+			await ERecht24.getPrivacyPolicySocialMedia(apiKey)
 		expect(privacyPolicySocialMedia).toBeDefined()
 		expect(
 			instanceOfPrivacyPolicySocialMedia(privacyPolicySocialMedia),
