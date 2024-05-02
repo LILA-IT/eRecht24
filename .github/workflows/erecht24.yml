@@ -35,7 +35,7 @@ jobs:
         run: npm run spell:check
 
       - name: Test
-        run: yarn run test --outputFile sonar-report.xml --reporter vitest-sonar-reporter
+        run: npm run test
 
       - name: Coverage
         run: npm run test:coverage
