@@ -4,12 +4,12 @@
 ![NPM](https://img.shields.io/npm/v/erecht24)
 ![GitHub Workflow Status](https://github.com/LILA-IT/eRecht24/actions/workflows/erecht24.yml/badge.svg?branch=main)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![Quality Gate Status](https://sonarqube.lila.systems/api/project_badges/measure?project=eRecht24&metric=alert_status&token=sqb_17d32d830cafc47fc0ea2968734531f12e89e870)](https://sonarqube.lila.systems/dashboard?id=eRecht24)
-[![Maintainability Rating](https://sonarqube.lila.systems/api/project_badges/measure?project=eRecht24&metric=sqale_rating&token=sqb_17d32d830cafc47fc0ea2968734531f12e89e870)](https://sonarqube.lila.systems/dashboard?id=eRecht24)
-[![Security](https://sonarqube.lila.systems/api/project_badges/measure?project=eRecht24&metric=security_rating&token=sqb_17d32d830cafc47fc0ea2968734531f12e89e870)](https://sonarqube.lila.systems/dashboard?id=eRecht24)
-[![Bugs](https://sonarqube.lila.systems/api/project_badges/measure?project=eRecht24&metric=bugs&token=sqb_17d32d830cafc47fc0ea2968734531f12e89e870)](https://sonarqube.lila.systems/dashboard?id=eRecht24)
-[![Coverage](https://sonarqube.lila.systems/api/project_badges/measure?project=eRecht24&metric=coverage&token=sqb_17d32d830cafc47fc0ea2968734531f12e89e870)](https://sonarqube.lila.systems/dashboard?id=eRecht24)
-[![Duplicated Lines (%)](https://sonarqube.lila.systems/api/project_badges/measure?project=eRecht24&metric=duplicated_lines_density&token=sqb_17d32d830cafc47fc0ea2968734531f12e89e870)](https://sonarqube.lila.systems/dashboard?id=eRecht24)
+[![Quality Gate Status](https://sonarqube.lila.systems/api/project_badges/measure?project=eRecht24&metric=alert_status&token=sqb_64b0d3e36aa77e98fb992a2f4f39dd5cb32b2381)](https://sonarqube.lila.systems/dashboard?id=eRecht24)
+[![Maintainability Rating](https://sonarqube.lila.systems/api/project_badges/measure?project=eRecht24&metric=sqale_rating&token=sqb_64b0d3e36aa77e98fb992a2f4f39dd5cb32b2381)](https://sonarqube.lila.systems/dashboard?id=eRecht24)
+[![Security](https://sonarqube.lila.systems/api/project_badges/measure?project=eRecht24&metric=security_rating&token=sqb_64b0d3e36aa77e98fb992a2f4f39dd5cb32b2381)](https://sonarqube.lila.systems/dashboard?id=eRecht24)
+[![Bugs](https://sonarqube.lila.systems/api/project_badges/measure?project=eRecht24&metric=bugs&token=sqb_64b0d3e36aa77e98fb992a2f4f39dd5cb32b2381)](https://sonarqube.lila.systems/dashboard?id=eRecht24)
+[![Coverage](https://sonarqube.lila.systems/api/project_badges/measure?project=eRecht24&metric=coverage&token=sqb_64b0d3e36aa77e98fb992a2f4f39dd5cb32b2381)](https://sonarqube.lila.systems/dashboard?id=eRecht24)
+[![Duplicated Lines (%)](https://sonarqube.lila.systems/api/project_badges/measure?project=eRecht24&metric=duplicated_lines_density&token=sqb_64b0d3e36aa77e98fb992a2f4f39dd5cb32b2381)](https://sonarqube.lila.systems/dashboard?id=eRecht24)
 
 ## ✨ Features
 
