@@ -1,6 +1,14 @@
 {
 	"version": "0.2",
 	"language": "en",
+	"dictunaries": [
+		"en_US",
+		"typescript",
+		"node",
+		"de_DE",
+		"softwareTerms",
+		"npm"
+	],
 	"words": [
 		"degit",
 		"esbuild",
@@ -10,7 +18,10 @@
 		"rmrf",
 		"ryansonshine",
 		"socio",
-		"tsdoc"
+		"tsdoc",
+		"Autopurge",
+		"erecht",
+		"dontMock"
 	],
 	"flagWords": [],
 	"ignorePaths": [
@@ -18,6 +29,7 @@
 		"package-lock.json",
 		"yarn.lock",
 		"tsconfig.json",
-		"node_modules/**"
+		"node_modules/**",
+		"src/api/**"
 	]
 }

@@ -1,81 +1,67 @@
-# TypeScript Library Starter
+# eRecht24
 
-![NPM](https://img.shields.io/npm/l/@gjuchault/typescript-library-starter)
-![NPM](https://img.shields.io/npm/v/@gjuchault/typescript-library-starter)
-![GitHub Workflow Status](https://github.com/gjuchault/typescript-library-starter/actions/workflows/typescript-library-starter.yml/badge.svg?branch=main)
+![NPM](https://img.shields.io/npm/l/erecht24)
+![NPM](https://img.shields.io/npm/v/erecht24)
+![GitHub Workflow Status](https://github.com/LILA-IT/eRecht24/actions/workflows/erecht24.yml/badge.svg?branch=main)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![Quality Gate Status](https://sonarqube.lila.systems/api/project_badges/measure?project=eRecht24&metric=alert_status&token=sqb_17d32d830cafc47fc0ea2968734531f12e89e870)](https://sonarqube.lila.systems/dashboard?id=eRecht24)
+[![Maintainability Rating](https://sonarqube.lila.systems/api/project_badges/measure?project=eRecht24&metric=sqale_rating&token=sqb_17d32d830cafc47fc0ea2968734531f12e89e870)](https://sonarqube.lila.systems/dashboard?id=eRecht24)
+[![Security](https://sonarqube.lila.systems/api/project_badges/measure?project=eRecht24&metric=security_rating&token=sqb_17d32d830cafc47fc0ea2968734531f12e89e870)](https://sonarqube.lila.systems/dashboard?id=eRecht24)
+[![Bugs](https://sonarqube.lila.systems/api/project_badges/measure?project=eRecht24&metric=bugs&token=sqb_17d32d830cafc47fc0ea2968734531f12e89e870)](https://sonarqube.lila.systems/dashboard?id=eRecht24)
+[![Coverage](https://sonarqube.lila.systems/api/project_badges/measure?project=eRecht24&metric=coverage&token=sqb_17d32d830cafc47fc0ea2968734531f12e89e870)](https://sonarqube.lila.systems/dashboard?id=eRecht24)
+[![Duplicated Lines (%)](https://sonarqube.lila.systems/api/project_badges/measure?project=eRecht24&metric=duplicated_lines_density&token=sqb_17d32d830cafc47fc0ea2968734531f12e89e870)](https://sonarqube.lila.systems/dashboard?id=eRecht24)
 
-Yet another (opinionated) TypeScript library starter template.
+## ✨ Features
 
-If you're looking for a backend service starter, check out my [typescript-service-starter](https://github.com/gjuchault/typescript-service-starter)
+A typescript package to fetch the imprint and privacy policy content from the e-recht24.de API. A premium membership is needed.
 
-## Opinions and limitations
+Create a project via the project manager and get the api key.
 
-1. Relies as much as possible on each included library's defaults
-2. Only relies on GitHub Actions
-3. Does not include documentation generation
+See [here](https://docs.api.e-recht24.de/) for more information.
 
-## Getting started
+This package uses caching to reduce the number of requests to the API. The cache is stored in memory and is not persistent. The cache is invalidated after 2 hours. The cache is only available on the server-side.
+We recommend using this package only on the server-side! You can also add a additional caching layer like Redis.
 
-1. `npx degit gjuchault/typescript-library-starter my-project` or click on the `Use this template` button on GitHub!
-2. `cd my-project`
-3. `npm install`
-4. `git init` (if you used degit)
-5. `npm run setup`
+It currently does not support the Push API from e-recht24.de.
 
-To enable deployment, you will need to:
+A gatsby plugin is also available [here](https://www.npmjs.com/package/gatsby-plugin-erecht24) by [pgegenfurtner](https://github.com/pgegenfurtner).
 
-1. Set up the `NPM_TOKEN` secret in GitHub Actions ([Settings > Secrets > Actions](https://github.com/gjuchault/typescript-library-starter/settings/secrets/actions))
-2. Give `GITHUB_TOKEN` write permissions for GitHub releases ([Settings > Actions > General](https://github.com/gjuchault/typescript-library-starter/settings/actions) > Workflow permissions)
+This package is not affiliated with e-recht24.de.
 
-## Features
+## 🔧 Installation
 
-### Node.js, npm version
+```sh
+npm install erecht24
+yarn add erecht24
+```
 
-TypeScript Library Starter relies on [Volta](https://volta.sh/) to ensure the Node.js version is consistent across developers. It's also used in the GitHub workflow file.
+## 🎬 Getting started
 
-### TypeScript
+```ts
+import { ERecht24 } from "erecht24"
 
-Leverages [esbuild](https://github.com/evanw/esbuild) for blazing-fast builds but keeps `tsc` to generate `.d.ts` files.
-Generates a single ESM build.
+const erecht24 = new ERecht24("YOUR API KEY")
+const imprint = await erecht24.Imprint
+const privacyPolicy = await erecht24.PrivacyPolicy
+const privacyPolicySocialMedia = await erecht24.PrivacyPolicySocialMedia
+```
 
-Commands:
+## 📜 API
 
-- `build`: runs type checking, then ESM and `d.ts` files in the `build/` directory
-- `clean`: removes the `build/` directory
-- `type:dts`: only generates `d.ts`
-- `type:check`: only runs type checking
-- `type:build`: only generates ESM
+Only your API Key is needed and you can use the corresponding properties to get the content. (see above)
+It is recommended to create the instance once and use the getter functions.
 
-### Tests
+There are also static functions available. With these functions the cache is not used. We do not recommend using these functions.
 
-TypeScript Library Starter uses [Node.js's native test runner](https://nodejs.org/api/test.html). Coverage is done using [c8](https://github.com/bcoe/c8) but will switch to Node.js's one once out.
+```ts
+import { ERecht24 } from "erecht24"
 
-Commands:
+const imprint = await ERecht24.getImprint("YOUR API KEY")
+const privacyPolicy = await ERecht24.getPrivacyPolicy("YOUR API KEY")
+const privacyPolicySocialMedia =
+	await ERecht24.getPrivacyPolicySocialMedia("YOUR API KEY")
+```
 
-- `test`: runs test runner
-- `test:watch`: runs test runner in watch mode
-- `test:coverage`: runs test runner and generates coverage reports
+## 🥂 License
 
-### Format & lint
-
-This template relies on [Biome](https://biomejs.dev/) to do both formatting & linting in no time.
-It also uses [cspell](https://github.com/streetsidesoftware/cspell) to ensure correct spelling.
-
-Commands:
-
-- `format`: runs Prettier with automatic fixing
-- `format:check`: runs Prettier without automatic fixing (used in CI)
-- `lint`: runs Biome with automatic fixing
-- `lint:check`: runs Biome without automatic fixing (used in CI)
-- `spell:check`: runs spell checking
-
-### Releasing
-
-Under the hood, this library uses [semantic-release](https://github.com/semantic-release/semantic-release) and [Commitizen](https://github.com/commitizen/cz-cli).
-The goal is to avoid manual release processes. Using `semantic-release` will automatically create a GitHub release (hence tags) as well as an npm release.
-Based on your commit history, `semantic-release` will automatically create a patch, feature, or breaking release.
-
-Commands:
-
-- `cz`: interactive CLI that helps you generate a proper git commit message, using [Commitizen](https://github.com/commitizen/cz-cli)
-- `semantic-release`: triggers a release (used in CI)
+[MIT](./LICENSE.md)

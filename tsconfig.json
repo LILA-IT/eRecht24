@@ -1,21 +1,23 @@
 {
 	"include": ["./src/**/*.ts"],
 	"compilerOptions": {
-		"lib": ["es2023"],
-		"module": "nodenext",
+		"lib": ["es2022", "dom"],
+		"module": "esnext",
 		"target": "es2022",
-		"moduleResolution": "nodenext",
+		"moduleResolution": "Node",
 
 		"rootDir": "./src",
 		"outDir": "build",
 
 		"strict": true,
-		"noUncheckedIndexedAccess": true,
 		"sourceMap": true,
 		"esModuleInterop": true,
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
 		"declaration": true,
-		"resolveJsonModule": true
+		"resolveJsonModule": true,
+
+		"types": ["vitest/globals"],
+		"allowUmdGlobalAccess": true
 	}
 }

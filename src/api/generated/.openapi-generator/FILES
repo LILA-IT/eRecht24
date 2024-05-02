@@ -1,0 +1,12 @@
+apis/LegalDocumentsApi.ts
+index.ts
+models/Imprint.ts
+models/Model401.ts
+models/Model401AllOfDebug.ts
+models/Model404Imprint.ts
+models/Model404PrivacyPolicy.ts
+models/Model404PrivacyPolicySocialMedia.ts
+models/Model503.ts
+models/PrivacyPolicy.ts
+models/PrivacyPolicySocialMedia.ts
+runtime.ts

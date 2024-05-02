@@ -1,2 +1,16 @@
 node_modules/
+.nyc_output/
 coverage/
+sonar-project.properties
+sonar-report.xml
+src/
+.gitignore
+.github/
+.vscode/
+.*
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+README.md
+tsconfig.json
+tsconfig.build.json
+vite.config.ts
