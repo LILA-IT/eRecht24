@@ -1,11 +1,11 @@
 {
 	"version": "0.2",
 	"language": "en",
-	"dictunaries": [
+	"dictionaries": [
 		"en_US",
 		"typescript",
 		"node",
-		"de_DE",
+		"de-de",
 		"softwareTerms",
 		"npm"
 	],
@@ -21,7 +21,8 @@
 		"tsdoc",
 		"Autopurge",
 		"erecht",
-		"dontMock"
+		"dontMock",
+		"pgegenfurtner"
 	],
 	"flagWords": [],
 	"ignorePaths": [
@@ -31,5 +32,7 @@
 		"tsconfig.json",
 		"node_modules/**",
 		"src/api/**"
-	]
+	],
+	"caseSensitive": false,
+	"import": ["@cspell/dict-de-de/cspell-ext.json"]
 }
